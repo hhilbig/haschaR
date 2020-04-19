@@ -27,6 +27,7 @@ tidy_rd <- function(model, se_nr){
   b_right <- model$bws[2,2]
 
   p <- model$p
+  n <- sum(model$N)
 
   smry <- tibble(estimate = est,
                  std.error = se,
@@ -35,6 +36,7 @@ tidy_rd <- function(model, se_nr){
                  conf.low = low,
                  conf.high = high,
                  p = p,
+                 n = n,
                  bw_left_h = h_left,
                  bw_right_h = h_right,
                  bw_left_b = b_left,
