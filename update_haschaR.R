@@ -1,7 +1,5 @@
 library(devtools)
 library(roxygen2)
-setwd()
-
 
 ## Declare WDs
 
