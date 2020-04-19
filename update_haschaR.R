@@ -1,6 +1,16 @@
 library(devtools)
 library(roxygen2)
-setwd('/Users/saschariaz/Google\ Drive_Harvard/Git/Rpackages/saschaR')
+setwd()
+
+
+## Declare WDs
+
+wd_h <- ''
+wd_s <- '/Users/saschariaz/Google\ Drive_Harvard/Git/haschaR'
+
+## Set WD
+
+haschaR::detect_wd(wd_h = wd_h, wd_alt = wd_s, user_name = 'Hanno')
 
 document()
 
