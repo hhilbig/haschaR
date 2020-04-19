@@ -1,4 +1,3 @@
-# saschaR
-my frequently used R functions
+# haschaR
 
 This package contains a collection of useful R functions.
