@@ -1,5 +1,5 @@
-Package: saschaR
-Title: SASCHAS FREQUENTLY USED FUNCTIONS 
+Package: haschaR
+Title: FREQUENTLY USED FUNCTIONS FROM HANNO AND SASCHA 
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Sascha",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("cre"),
            email = "riaz@g.harvard.edu",
            comment = c(ORCID = "https://orcid.org/0000-0002-8933-0836"))
-Description: This package contains functions I frequently use. 
+Description: This package contains functions we frequently use. 
 License: What license it uses
 Encoding: UTF-8
 LazyData: true
