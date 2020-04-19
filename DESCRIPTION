@@ -1,0 +1,14 @@
+Package: saschaR
+Title: SASCHAS FREQUENTLY USED FUNCTIONS 
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Sascha",
+           family = "Riaz",
+           role = c("cre"),
+           email = "riaz@g.harvard.edu",
+           comment = c(ORCID = "https://orcid.org/0000-0002-8933-0836"))
+Description: This package contains functions I frequently use. 
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
