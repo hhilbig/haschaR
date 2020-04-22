@@ -4,12 +4,12 @@
 \alias{theme_hanno}
 \title{This is my ggplot theme}
 \usage{
-theme_hanno(fontsize = 15, font = "default")
+theme_hanno(fontsize = 15, facet_alt = F)
 }
 \arguments{
 \item{fontsize}{Selecte fontsize, default is 15}
 
-\item{font}{Selected font. Either 'default' or 'frutiger'.}
+\item{facet_alt}{Facet strips with white BG}
 }
 \value{
 This is a custom ggplot theme. You can change the font size and the font family.
@@ -20,7 +20,7 @@ This is my ggplot theme
 \examples{
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
 geom_point() +
-theme_hanno(fontsize = 15, font = 'frutiger')
+theme_hanno(fontsize = 15)
 
 
 }

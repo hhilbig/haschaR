@@ -8,7 +8,7 @@ wd_s <- '/Users/saschariaz/Google\ Drive_Harvard/Git/haschaR'
 
 ## Set WD
 
-hannostuff2::detect_wd(wd_h = wd_h, wd_alt = wd_s, user_name = 'Hanno')
+haschaR::detect_wd(wd_h = wd_h, wd_alt = wd_s, user_name = 'Hanno')
 
 document()
 
