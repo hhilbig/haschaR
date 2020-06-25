@@ -14,5 +14,5 @@ document()
 
 ## PUSH BEFORE REINSTALLING 
 
-install_github('https://github.com/hhilbig/haschaR', force = T)
+devtools::install_github('https://github.com/hhilbig/haschaR', force = T)
 
