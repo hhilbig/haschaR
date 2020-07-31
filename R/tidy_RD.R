@@ -27,7 +27,7 @@ tidy_rd <- function(model, se_nr){
   b_right <- model$bws[2,2]
 
   p <- model$p
-  n <- sum(model$N)
+  n <- sum(model$N_h)
 
   smry <- tibble(estimate = est,
                  std.error = se,
