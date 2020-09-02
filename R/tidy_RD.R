@@ -1,14 +1,12 @@
-## Summarize the Output from rdrobust
-## (works similar to tidy() for lm objects)
-
-#' @title Summarize the Output from rdrobust
+#' Summarize the Output from rdrobust
+#' (works similar to tidy() for lm objects)
+#'
+#' @title Summarize the output from rdrobust
 #' @param model
 #' @param se_nr specify the standard error: 1 = conventional, 2 = Bias-Corrected, 3 = Robust
 #' @import tidyverse rdrobust
 #' @export 
-#' @examples
-#'
-#'
+
 
 tidy_rd <- function(model, se_nr){
 
