@@ -4,7 +4,8 @@
 #' @title Summarize the Output from rdrobust
 #' @param model
 #' @param se_nr specify the standard error: 1 = conventional, 2 = Bias-Corrected, 3 = Robust
-#' @export
+#' @import tidyverse rdrobust
+#' @export 
 #' @examples
 #'
 #'
