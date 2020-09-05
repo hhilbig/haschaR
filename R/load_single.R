@@ -19,7 +19,7 @@
 #' nice_load(file = paste0(tempdir(), "/temp.RData"), "y", rename = "z")
 #' @export
 
-nice_load <- function(file, object, rename = NULL){
+load_single <- function(file, object, rename = NULL){
   
   if (!requireNamespace("stringr", quietly = TRUE)) {
     stop("stringr needed for this function to work. Please install it.",
