@@ -2,7 +2,7 @@
 % Please edit documentation in R/geometry_to_lon_lat.R
 \name{geometry_to_lonlat}
 \alias{geometry_to_lonlat}
-\title{A function to comnvert sf objects into data frames including lon/lat columns}
+\title{A function to convert sf objects into data frames including lon/lat columns}
 \usage{
 geometry_to_lonlat(x)
 }
@@ -10,5 +10,5 @@ geometry_to_lonlat(x)
 \item{x}{an sf object}
 }
 \description{
-A function to comnvert sf objects into data frames including lon/lat columns
+A function to convert sf objects into data frames including lon/lat columns
 }
