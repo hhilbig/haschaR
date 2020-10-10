@@ -1,4 +1,4 @@
-#' A function to comnvert sf objects into data frames including lon/lat columns 
+#' A function to convert sf objects into data frames including lon/lat columns 
 #'
 #' 
 #' @param x an sf object
