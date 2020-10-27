@@ -7,12 +7,17 @@
 
 remove_umlaut <- function(x) {
   
-  string <- str_replace_all(string, 'ö', 'oe') 
-  string <- str_replace_all(string, 'ä', 'ae') 
-  string <- str_replace_all(string, 'ü', 'ue') 
-  string <- str_replace_all(string, 'ß', 'ss')
+  x <- str_replace_all(x, 'ö', 'oe') 
+  x <- str_replace_all(x, 'ä', 'ae') 
+  x <- str_replace_all(x, 'ü', 'ue') 
+  x <- str_replace_all(x, 'ß', 'ss')
   
-  return(string)
+  
+  x <- str_replace_all(x, 'Ö', 'Oe') 
+  x <- str_replace_all(x, 'Ä', 'Ae') 
+  x <- str_replace_all(x, 'Ü', 'Ue') 
+  
+  return(x)
   
 }
 
