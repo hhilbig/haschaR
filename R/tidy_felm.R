@@ -5,12 +5,14 @@
 #' @param model felm model
 #' @param add_glance if T, glance output will be added to each line (note that not all default glance output will be returned)
 #' @param add_dv_stats if T, DV mean, sd, min, max will be added to each line
+#' @param add_conf_90 if T, 90% CIs will be added (note that I use normal and not t distribution)
 #' @import tidyverse lfe broom
 #' @export
 
 
 tidy_felm <- function(model, add_glance = T,
-                      add_dv_stats = T) {
+                      add_dv_stats = T,
+                      add_conf_90 = T) {
   
   n <- sum(!is.na(model$residuals))
   m_tidy <- broom::tidy(model, conf.int = T)
@@ -19,6 +21,16 @@ tidy_felm <- function(model, add_glance = T,
   
   out <- m_tidy %>% 
     mutate(n = n)
+  
+  ## 90% CI
+  
+  if (add_conf_90) {
+    
+   out <- out %>% 
+     mutate(conf.low90 = estimate - qnorm(0.95) * std.error,
+            conf.high90 = estimate + qnorm(0.95) * std.error)
+    
+  }
   
   ## Add Mean, SD, Min, Max of DV
   
@@ -39,6 +51,8 @@ tidy_felm <- function(model, add_glance = T,
              dv_max = dv_max)
     
   }
+  
+
   
   ## Add model stats
   

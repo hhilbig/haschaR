@@ -4,7 +4,7 @@
 \alias{tidy_felm}
 \title{Felm output summarize}
 \usage{
-tidy_felm(model, add_glance = T, add_dv_stats = T)
+tidy_felm(model, add_glance = T, add_dv_stats = T, add_conf_90 = T)
 }
 \arguments{
 \item{model}{felm model}
@@ -12,6 +12,8 @@ tidy_felm(model, add_glance = T, add_dv_stats = T)
 \item{add_glance}{if T, glance output will be added to each line (note that not all default glance output will be returned)}
 
 \item{add_dv_stats}{if T, DV mean, sd, min, max will be added to each line}
+
+\item{add_conf_90}{if T, 90% CIs will be added (note that I use normal and not t distribution)}
 }
 \description{
 Felm output summarize
