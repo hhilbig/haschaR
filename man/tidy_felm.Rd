@@ -4,10 +4,12 @@
 \alias{tidy_felm}
 \title{Felm output summarize}
 \usage{
-tidy_felm(model)
+tidy_felm(model, add_glance = T)
 }
 \arguments{
 \item{model}{felm model}
+
+\item{add_glance}{if T, glance output will be add to each line (note that not all default glance output will be returned)}
 }
 \description{
 Felm output summarize
