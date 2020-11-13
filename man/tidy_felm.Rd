@@ -4,12 +4,14 @@
 \alias{tidy_felm}
 \title{Felm output summarize}
 \usage{
-tidy_felm(model, add_glance = T)
+tidy_felm(model, add_glance = T, add_dv_stats = T)
 }
 \arguments{
 \item{model}{felm model}
 
-\item{add_glance}{if T, glance output will be add to each line (note that not all default glance output will be returned)}
+\item{add_glance}{if T, glance output will be added to each line (note that not all default glance output will be returned)}
+
+\item{add_dv_stats}{if T, DV mean, sd, min, max will be added to each line}
 }
 \description{
 Felm output summarize
