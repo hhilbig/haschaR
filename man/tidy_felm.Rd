@@ -16,6 +16,5 @@ tidy_felm(model, add_glance = T, add_dv_stats = T, add_conf_90 = T)
 \item{add_conf_90}{if T, 90% CIs will be added (note that I use normal and not t distribution)}
 }
 \description{
-Felm output summarize
-Main diff. to normal tidy is that this also gets number of obs
+Felm output summarize,
 }

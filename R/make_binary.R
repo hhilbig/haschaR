@@ -1,5 +1,4 @@
 #' Convert cont var to binary
-#' Based on mean, median, or some quantile
 #'
 #' @title Convert cont var to binary
 #' @param v method q

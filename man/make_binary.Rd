@@ -15,5 +15,4 @@ make_binary(v, method = "median", q = 0.75)
 }
 \description{
 Convert cont var to binary
-Based on mean, median, or some quantile
 }

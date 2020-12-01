@@ -1,5 +1,4 @@
-#' Felm output summarize
-#' Main diff. to normal tidy is that this also gets number of obs
+#' Felm output summarize,
 #'
 #' @title Felm output summarize
 #' @param model felm model
