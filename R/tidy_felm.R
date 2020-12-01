@@ -4,7 +4,7 @@
 #' @param model felm model
 #' @param add_glance if T, glance output will be added to each line (note that not all default glance output will be returned)
 #' @param add_dv_stats if T, DV mean, sd, min, max will be added to each line
-#' @param add_conf_90 if T, 90% CIs will be added (note that I use normal and not t distribution)
+#' @param add_conf_90 if T, 90\% CIs will be added (note that I use normal and not t distribution)
 #' @import tidyverse lfe broom
 #' @export
 
