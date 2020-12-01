@@ -1,4 +1,4 @@
-#' Felm output summarize,
+#' Felm output summarize
 #'
 #' @title Felm output summarize
 #' @param model felm model
