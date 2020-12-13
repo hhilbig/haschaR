@@ -13,7 +13,7 @@ tidy_felm(model, add_glance = T, add_dv_stats = T, add_conf_90 = T)
 
 \item{add_dv_stats}{if T, DV mean, sd, min, max will be added to each line}
 
-\item{add_conf_90}{if T, 90pct CIs will be added (note that I use normal and not t distribution)}
+\item{add_conf_90}{if T, 90\% CIs will be added (note that I use normal and not t distribution)}
 }
 \description{
 Felm output summarize
