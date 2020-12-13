@@ -9,6 +9,14 @@
 
 str_filter <- function(string, pattern, neg = F) {
   
-  string %>% .[str_detect(., pattern), negate = neg]
+  if (neg == F) {
+    
+    string %>% .[str_detect(., pattern)]
+    
+  } else {
+    
+    string %>% .[!str_detect(., pattern)]
+    
+  }
   
 }
