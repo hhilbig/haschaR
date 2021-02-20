@@ -3,6 +3,7 @@
 S3method(rbind,match.columns)
 export(add_linebreak)
 export(add_linebreak_vector)
+export(auto_make_runall_file)
 export(detect_wd)
 export(fstat_extract)
 export(fuzzy_string_match)
