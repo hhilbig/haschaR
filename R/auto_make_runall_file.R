@@ -68,7 +68,8 @@ auto_make_runall_file <- function(code_directory, out_file = '') {
   
   write_one_group <- function(gname, gfiles) {
     
-    g <- c(paste0('## ', str_replace_all(gname, '_', ' ')), '', paste0("source(\"", gfiles, "\")"), '')
+    g <- c(paste0('## ', str_replace_all(gname, '_', ' ')), '', 
+           paste0("source(\"", paste0(code_directory, gfiles), "\")"), '')
     g
     
   }

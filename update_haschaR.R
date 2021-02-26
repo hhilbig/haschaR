@@ -19,3 +19,4 @@ document()
 devtools::install_github('https://github.com/hhilbig/haschaR', 
                          force = T, upgrade = T)
 
+
