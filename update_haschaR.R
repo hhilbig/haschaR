@@ -1,6 +1,8 @@
 library(devtools)
 library(roxygen2)
 
+rm(list = ls())
+
 ## Declare WDs
 
 wd_h <- '/Users/hanno/Local_Projects/haschaR/'

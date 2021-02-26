@@ -13,9 +13,8 @@
 
 auto_make_runall_file <- function(code_directory, out_file = '') {
   
-  cat('Pls make sure code directory is be full path')
-  cat('script ignores anything with the terms OLD|Old|old|Archive|ARCHIVE')
-  cat('Files not in any subfolder are at the end of the output file')
+  message('script ignores anything with the terms OLD|Old|old|Archive|ARCHIVE')
+  message('Files not in any subfolder are at the end of the output file')
   
   ## Get R files
   
@@ -92,7 +91,7 @@ auto_make_runall_file <- function(code_directory, out_file = '') {
     
   } else {
     
-    cat(file_text)
+    cat(file_text, sep= '\n')
     
   }
   
