@@ -4,7 +4,7 @@
 \alias{auto_make_runall_file}
 \title{This makes a runall file from a directory that has r files}
 \usage{
-auto_make_runall_file(code_directory, out_file = "01_RUNALL.R")
+auto_make_runall_file(code_directory, out_file = "")
 }
 \arguments{
 \item{code_directory}{Directory that has all the code (needs full name)}

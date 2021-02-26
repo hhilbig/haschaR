@@ -11,11 +11,11 @@
 #'
 #' 
 
-auto_make_runall_file <- function(code_directory, out_file = '01_RUNALL.R') {
+auto_make_runall_file <- function(code_directory, out_file = '') {
   
-  message('Pls make sure code directory is be full path')
-  message('This script ignores anything with the terms OLD|Old|old|Archive|ARCHIVE')
-  message('Files not in any subfolder are at the end of the output file')
+  cat('Pls make sure code directory is be full path')
+  cat('script ignores anything with the terms OLD|Old|old|Archive|ARCHIVE')
+  cat('Files not in any subfolder are at the end of the output file')
   
   ## Get R files
   
@@ -69,7 +69,7 @@ auto_make_runall_file <- function(code_directory, out_file = '01_RUNALL.R') {
   
   write_one_group <- function(gname, gfiles) {
     
-    g <- c(paste0('## ', gname), '', paste0("source(\"", gfiles, "\")"), '')
+    g <- c(paste0('## ', str_replace_all(gname, '_', ' ')), '', paste0("source(\"", gfiles, "\")"), '')
     g
     
   }
@@ -80,10 +80,21 @@ auto_make_runall_file <- function(code_directory, out_file = '01_RUNALL.R') {
     sapply(function(x) write_one_group(x$group, x$files)) %>% 
     unlist()
   
-  ## Write all to file
-  
-  fileConn <- file(out_file)
-  writeLines(file_text, fileConn)
-  close(fileConn)
+  if (!out_file == '') {
+    
+    cat('saving to ', out_file)
+    
+    ## Write all to file
+    
+    fileConn <- file(out_file)
+    writeLines(file_text, fileConn)
+    close(fileConn)
+    
+  } else {
+    
+    cat(file_text)
+    
+  }
   
 }
+
