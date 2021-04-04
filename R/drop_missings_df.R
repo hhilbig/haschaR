@@ -5,7 +5,7 @@
 #' @return DF with original string, match and distance to matchs
 #' @export
 
-fdrop_missings_df <- function(df, varlist) {
+drop_missings_df <- function(df, varlist) {
   df <- df[complete.cases(df[, varlist])]
   df
 }
