@@ -6,6 +6,6 @@
 #' @export
 
 drop_missings_df <- function(df, varlist) {
-  df <- df[complete.cases(df[, varlist])]
+  df <- df[complete.cases(df[, varlist]), ]
   df
 }
