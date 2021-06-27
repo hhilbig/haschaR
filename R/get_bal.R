@@ -11,7 +11,7 @@ get_bal <- function(treatvar, cov_list, data.df, FE) {
 
   out_temp <- lapply(cov_list, function(cv) {
 
-    if(length(FE == 0)){
+    if(length(FE) == 0){
       f <- as.formula(paste0(cv, ' ~', treatvar))
     }
 
