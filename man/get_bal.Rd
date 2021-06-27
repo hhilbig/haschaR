@@ -4,7 +4,7 @@
 \alias{get_bal}
 \title{Standardized Covariate Balance}
 \usage{
-get_bal(treatvar, cov_list, data.df, FE)
+get_bal(treatvar, cov_list, data.df, FE = NULL, weights = NULL)
 }
 \arguments{
 \item{treatvar}{treatment variable}
