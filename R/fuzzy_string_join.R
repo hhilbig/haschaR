@@ -14,7 +14,7 @@ fuzzy_string_join <- function(df_left, df_right, by = '',
   
   ## Check if by is in both DFs
   
-  if (!((by %in% colnames(df1)) & (by %in% colnames(df1)))) {
+  if (!((by %in% colnames(df_left)) & (by %in% colnames(df_right)))) {
     stop('By variable needs to be in both data frames')
   }
   
