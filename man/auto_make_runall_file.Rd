@@ -4,12 +4,14 @@
 \alias{auto_make_runall_file}
 \title{This makes a runall file from a directory that has r files}
 \usage{
-auto_make_runall_file(code_directory, out_file = "")
+auto_make_runall_file(code_directory, out_file = "", send_to_clipboard = T)
 }
 \arguments{
 \item{code_directory}{Directory that has all the code (needs full name)}
 
 \item{out_file}{outout .R file}
+
+\item{send_to_clipboard}{if T, then output will be sent to clipboard}
 }
 \value{
 This saves an .R file

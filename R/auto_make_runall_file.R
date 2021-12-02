@@ -2,8 +2,9 @@
 #'
 #' @param code_directory Directory that has all the code (needs full name)
 #' @param out_file outout .R file
+#' @param send_to_clipboard if T, then output will be sent to clipboard
 #' @return This saves an .R file
-#' @import stringr tidyverse
+#' @import stringr tidyverse clipr
 #' @export
 #' @examples
 #' auto_make_runall_file(code_directory = "C:/Users/hanno/Dropbox/Harvard/Projects/Newspapers/02_Code/", 
@@ -11,7 +12,8 @@
 #'
 #' 
 
-auto_make_runall_file <- function(code_directory, out_file = '') {
+auto_make_runall_file <- function(code_directory, out_file = '',
+                                  send_to_clipboard = T) {
   
   message('script ignores anything with the terms OLD|Old|old|Archive|ARCHIVE')
   message('Files not in any subfolder are at the end of the output file')
@@ -92,7 +94,15 @@ auto_make_runall_file <- function(code_directory, out_file = '') {
     
   } else {
     
-    cat(file_text, sep= '\n')
+    if (send_to_clipboard) {
+      
+      write_clip(file_text)
+      
+    } else {
+      
+      cat(file_text, sep= '\n')
+      
+    }
     
   }
   
