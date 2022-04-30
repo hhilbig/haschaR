@@ -18,7 +18,6 @@ check_missings_df <- function(df, varlist, group = '') {
                        ~sum(is.na(.))/n())) %>% 
       mutate(across(one_of(varlist),
                     round, 2))
-    row.names(out) <- "Share missing"
     out
   } else {
     
@@ -31,6 +30,6 @@ check_missings_df <- function(df, varlist, group = '') {
       mutate(across(one_of(varlist),
                     round, 2))
 
-    out 
+    out
   }
 }
