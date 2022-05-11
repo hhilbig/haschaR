@@ -24,7 +24,7 @@ german_party_convert <- function(party_vec) {
     
     which_party <- sapply(party_orig, function(p) {
       
-      str_detect(x, paste0(p, collapse = '|'))
+      str_detect(tolower(x), paste0(tolower(p), collapse = '|'))
       
     })
     
