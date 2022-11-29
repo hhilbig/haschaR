@@ -6,7 +6,7 @@ rm(list = ls())
 ## Declare WDs
 
 wd_h <- '/Users/hanno/Local_Projects/haschaR/'
-wd_s <- '/Users/saschariaz/Google\ Drive_Harvard/Git/haschaR'
+wd_s <- '/Users/saschariaz_1/Dropbox\ (Nuffield\ College)/07_Git/haschaR'
 
 ## Set WD
 
