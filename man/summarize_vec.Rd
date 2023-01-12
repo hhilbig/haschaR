@@ -12,3 +12,6 @@ summarize_vec(vector)
 \description{
 Summarize a vector
 }
+\examples{
+
+}

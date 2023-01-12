@@ -5,7 +5,7 @@
 \alias{reformen}
 \title{function to convert ags from old to new}
 \format{
-An object of class \code{data.frame} with 5457 rows and 4 columns.
+An object of class \code{data.frame} with 5458 rows and 10 columns.
 }
 \usage{
 reformen
@@ -18,5 +18,8 @@ reformen
 }
 \description{
 function to convert ags from old to new
+}
+\examples{
+
 }
 \keyword{datasets}

@@ -2,19 +2,15 @@
 % Please edit documentation in R/tidy_feols.R
 \name{tidy_feols}
 \alias{tidy_feols}
-\title{feols output summarize}
+\title{feols output summarize for multiple outcomes}
 \usage{
-tidy_feols(model, add_glance = T, add_dv_stats = T, add_conf_90 = T)
+tidy_feols(model, ...)
 }
 \arguments{
-\item{model}{feols model}
+\item{model}{feols model with multiple outcomes}
 
-\item{add_glance}{if T, glance output will be added to each line (note that not all default glance output will be returned)}
-
-\item{add_dv_stats}{if T, DV mean, sd, min, max will be added to each line}
-
-\item{add_conf_90}{if T, 90\% CIs will be added (note that I use normal and not t distribution)}
+\item{...}{arguments passed to tidy_feols_single (see documentation)}
 }
 \description{
-feols output summarize
+feols output summarize for multiple outcomes (should also work for just one outcome)
 }

@@ -12,3 +12,7 @@ rank_fun(x)
 \description{
 Assign non-unique numeric ranks
 }
+\examples{
+
+
+}
