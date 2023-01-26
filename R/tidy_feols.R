@@ -9,7 +9,7 @@
 
 tidy_feols <- function(model, ...) {
   
-  if (names(model)[1] == 'nobs') {
+  if (!is.null(names(model))) {
     
     tidy_feols_single(model, ...)
     
