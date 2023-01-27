@@ -59,7 +59,7 @@ tidy_feols_single <- function(model, add_glance = T,
       
     }
     
-    ## Add model formula and variables
+    ## Add model formula, variables, FEs
     
     fml <- model$fml
     dv_lab <- fml %>% as.character() %>% 
@@ -70,6 +70,13 @@ tidy_feols_single <- function(model, add_glance = T,
     out <- out %>% 
       mutate(dv = dv_lab, 
              fml = deparse(fml))
+    
+    ## 
+    
+    fe_vars <- paste0(model$fixef_vars, collapse = ", ")
+    
+    out <- out %>% 
+      mutate(fixef_vars = fe_vars)
     
     ## Add model stats
     
