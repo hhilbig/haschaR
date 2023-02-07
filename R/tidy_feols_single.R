@@ -22,7 +22,9 @@ tidy_feols_single <- function(model, add_glance = T,
   } else {
     
     n <- model$nobs
-    m_tidy <- broom::tidy(model, conf.int = T)
+    m_tidy <- broom::tidy(model, conf.int = F) %>% 
+      mutate(conf.low = estimate - qnorm(0.975)*std.error,
+             conf.high = estimate + qnorm(0.975)*std.error)
     dv_val <- model.matrix(model, type = 'lhs')
     
     ## Combine and return
