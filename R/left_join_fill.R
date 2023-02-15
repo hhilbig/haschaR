@@ -2,7 +2,7 @@
 #'
 #' @param x left df
 #' @param y right df
-#' @param y by param (passed to left_join)
+#' @param by by param (passed to left_join)
 #' @param fill_col name of column to be filled from right df
 #' @return left df, missings filled in based on right df
 #' @import tidyverse
@@ -12,11 +12,18 @@
 
 left_join_fill <- function(x, y, by, fill_col = "") {
   
-  if (!length(fill_col) == "") {
+  if (!length(fill_col) == 1) {
     
     warning("please only specify one column to be filled")
     
   }
+  
+  ## DFs to tibble (in case their format is something else)
+  
+  x <- as_tibble(x) %>% 
+    ungroup()
+  y <- as_tibble(y) %>% 
+    ungroup()
   
   ## Get nrow
   

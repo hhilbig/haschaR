@@ -9,7 +9,9 @@ left_join_fill(x, y, by, fill_col = "")
 \arguments{
 \item{x}{left df}
 
-\item{y}{by param (passed to left_join)}
+\item{y}{right df}
+
+\item{by}{by param (passed to left_join)}
 
 \item{fill_col}{name of column to be filled from right df}
 }
