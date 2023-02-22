@@ -9,6 +9,3 @@ fstat_extract(model)
 \description{
 Extracting the F-stat from an IVreg Model
 }
-\examples{
-
-}
