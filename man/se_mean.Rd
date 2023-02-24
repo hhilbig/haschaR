@@ -12,3 +12,6 @@ se_mean(var)
 \description{
 Standard Error of the Mean
 }
+\examples{
+
+}

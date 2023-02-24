@@ -5,13 +5,15 @@
 #' @param add_glance if T, glance output will be added to each line (note that not all default glance output will be returned)
 #' @param add_dv_stats if T, DV mean, sd, min, max will be added to each line
 #' @param add_conf_90 if T, 90\% CIs will be added (note that I use normal and not t distribution)
+#' @param add_first_rhs_stats if T, firsth RHS variable mean, sd, min, max will be added to each line. if the first RHS variable is always one, stats for the second RHS variable will be added instead.
 #' @import tidyverse fixest broom
 #' @export
 
 
 tidy_feols_single <- function(model, add_glance = T,
                               add_dv_stats = T,
-                              add_conf_90 = T) {
+                              add_conf_90 = T,
+                              add_first_rhs_stats = T) {
   
   ## Check if multiple outcome
   
@@ -58,6 +60,39 @@ tidy_feols_single <- function(model, add_glance = T,
                dv_sd = dv_sd,
                dv_min = dv_min,
                dv_max = dv_max)
+      
+    }
+    
+    ## add stats of the first RHS var if desired
+    
+    if (add_first_rhs_stats) {
+      
+      rhs <- model.matrix(model, type = 'rhs')
+      
+      if (!all(rhs[, 1] == 1)) {
+        
+        first_rhs <- rhs[, 1]
+        
+      } else {
+        
+        first_rhs <- rhs[, 2]
+        
+      }
+      
+      ## Get stuff
+      
+      first_rhs_mean <- first_rh %>% mean(na.rm = T)
+      first_rhs_sd <- first_rh %>% sd(na.rm = T)
+      first_rhs_min <- first_rh %>% min(na.rm = T)
+      first_rhs_max <- first_rh %>% max(na.rm = T)
+      
+      ## add to data 
+      
+      out <- out %>% 
+        mutate(first_rh_mean = first_rh_mean,
+               first_rh_sd = first_rh_sd,
+               first_rh_min = first_rh_min,
+               first_rh_max = first_rh_max)
       
     }
     

@@ -12,3 +12,7 @@ state_id_to_names(state_id)
 \description{
 Conversion between German state IDs (AGS) and English names
 }
+\examples{
+
+
+}
