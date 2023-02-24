@@ -81,18 +81,18 @@ tidy_feols_single <- function(model, add_glance = T,
       
       ## Get stuff
       
-      first_rhs_mean <- first_rh %>% mean(na.rm = T)
-      first_rhs_sd <- first_rh %>% sd(na.rm = T)
-      first_rhs_min <- first_rh %>% min(na.rm = T)
-      first_rhs_max <- first_rh %>% max(na.rm = T)
+      first_rhs_mean <- first_rhs %>% mean(na.rm = T)
+      first_rhs_sd <- first_rhs %>% sd(na.rm = T)
+      first_rhs_min <- first_rhs %>% min(na.rm = T)
+      first_rhs_max <- first_rhs %>% max(na.rm = T)
       
       ## add to data 
       
       out <- out %>% 
-        mutate(first_rh_mean = first_rh_mean,
-               first_rh_sd = first_rh_sd,
-               first_rh_min = first_rh_min,
-               first_rh_max = first_rh_max)
+        mutate(first_rhs_mean = first_rhs_mean,
+               first_rhs_sd = first_rhs_sd,
+               first_rhs_min = first_rhs_min,
+               first_rhs_max = first_rhs_max)
       
     }
     
