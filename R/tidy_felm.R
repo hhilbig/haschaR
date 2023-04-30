@@ -33,7 +33,8 @@ tidy_felm <- function(model, add_glance = T,
   
   ## Add Mean, SD, Min, Max of DV
   
-  dv <- model$formula %>% str_split(' ~ ', simplify = T) %>% .[2]
+  dv <- model$formula %>% as.character() %>% 
+    str_split(' ~ ', simplify = T) %>% .[2]
   dv_mean <- model %>% augment() %>% pull(!!dv) %>% mean(na.rm = T)
   dv_sd <- model %>% augment() %>% pull(!!dv) %>% sd(na.rm = T)
   dv_min <- model %>% augment() %>% pull(!!dv) %>% min(na.rm = T)
