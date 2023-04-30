@@ -19,7 +19,4 @@ reformen
 \description{
 function to convert ags from old to new
 }
-\examples{
-
-}
 \keyword{datasets}
