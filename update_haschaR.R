@@ -20,4 +20,6 @@ document()
 devtools::install_github('hhilbig/haschaR', 
                          upgrade = T, force = T, quiet = T)
 
+## 
+
 
