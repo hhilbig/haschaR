@@ -27,6 +27,9 @@ use_package("rdrobust")
 use_package("clipr")
 use_package("grDevices")
 use_package("glue")
+use_package("magick")
+use_package("pdftools")
+use_package("png")
 
 document()
 

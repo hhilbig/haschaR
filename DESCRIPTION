@@ -21,6 +21,9 @@ Imports:
     glue,
     grDevices,
     lfe,
+    magick,
+    pdftools,
+    png,
     rdrobust,
     stringdist,
     stringr
