@@ -91,25 +91,36 @@ tidy_feols_single <- function(model, add_glance = T,
     ## add stats of the first RHS var if desired
     
     if (add_first_rhs_stats) {
+
+      ## Only if more than 0 obs
+
+      if (n > 0) {
+        rhs <- model.matrix(model, type = "rhs")
+
+
+        if (!all(rhs[, 1] == 1)) {
+          first_rhs <- rhs[, 1]
+        } else {
+          first_rhs <- rhs[, 2]
+        }
+
+        ## Get stuff
+
+        first_rhs_mean <- first_rhs %>% mean(na.rm = T)
+        first_rhs_sd <- first_rhs %>% sd(na.rm = T)
+        first_rhs_min <- first_rhs %>% min(na.rm = T)
+        first_rhs_max <- first_rhs %>% max(na.rm = T)
       
-      rhs <- model.matrix(model, type = 'rhs')
-      
-      if (!all(rhs[, 1] == 1)) {
-        
-        first_rhs <- rhs[, 1]
-        
       } else {
-        
-        first_rhs <- rhs[, 2]
-        
+
+        ## Assign NA since the model has no obs
+
+        first_rhs_mean <- NA 
+        first_rhs_sd <- NA   
+        first_rhs_min <- NA 
+        first_rhs_max <- NA
+
       }
-      
-      ## Get stuff
-      
-      first_rhs_mean <- first_rhs %>% mean(na.rm = T)
-      first_rhs_sd <- first_rhs %>% sd(na.rm = T)
-      first_rhs_min <- first_rhs %>% min(na.rm = T)
-      first_rhs_max <- first_rhs %>% max(na.rm = T)
       
       ## add to data 
       
