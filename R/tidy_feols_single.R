@@ -27,7 +27,14 @@ tidy_feols_single <- function(model, add_glance = T,
     m_tidy <- broom::tidy(model, conf.int = F) %>% 
       mutate(conf.low = estimate - qnorm(0.975)*std.error,
              conf.high = estimate + qnorm(0.975)*std.error)
-    dv_val <- model.matrix(model, type = 'lhs')
+
+    ## If more than 0 valid observations
+
+    if (n > 0) {
+      dv_val <- model.matrix(model, type = "lhs")
+    } else {
+      dv_val <- NA
+    }
     
     ## Combine and return
     
@@ -50,6 +57,24 @@ tidy_feols_single <- function(model, add_glance = T,
     dv_sd <- dv_val %>% sd(na.rm = T)
     dv_min <- dv_val %>% min(na.rm = T)
     dv_max <- dv_val %>% max(na.rm = T)
+
+    ## All to NA if Nan
+
+    if (is.nan(dv_mean)) {
+      dv_mean <- NA
+    }
+
+    if (is.nan(dv_sd)) {
+      dv_sd <- NA
+    }
+
+    if (is.nan(dv_min)) {
+      dv_min <- NA
+    }
+
+    if (is.nan(dv_max)) {
+      dv_max <- NA
+    }
     
     ## Add DV stats to output
     
