@@ -10,11 +10,9 @@
 move_plots_to_overleaf <- function(code_directory_string = 'Code',
                                    script_string = 'Overleaf') {
   
-  d <- dir() %>% 
+  d <- dir(recursive = T, full.names = T) %>%
     str_filter(code_directory_string) %>%
-    str_filter("workspace", neg = T) %>% 
-    first()
-    dir(recursive = T, full.names = T) %>% 
+    str_filter("workspace", neg = T) %>%
     str_filter(script_string) %>% 
     first()
   
