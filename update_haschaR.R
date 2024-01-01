@@ -38,6 +38,4 @@ document()
 devtools::install_github('hhilbig/haschaR', 
                          upgrade = T, force = T, quiet = T)
 
-## 
 
-haschaR::move_plots_to_overleaf
