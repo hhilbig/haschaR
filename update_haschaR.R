@@ -36,6 +36,5 @@ document()
 ## PUSH BEFORE REINSTALLING 
 
 devtools::install_github('hhilbig/haschaR', 
-                         upgrade = T, force = T, quiet = T)
-
+                         upgrade = T, force = T, quiet = F)
 

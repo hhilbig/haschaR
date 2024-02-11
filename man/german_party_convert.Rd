@@ -4,7 +4,10 @@
 \alias{german_party_convert}
 \title{Convert german party names (de or en) to proper German party names}
 \usage{
-german_party_convert(party_vec)
+german_party_convert(
+  party_vec,
+  far_right_label = "Far-right parties (incl. AfD)"
+)
 }
 \arguments{
 \item{party_vec}{vector of party names}
