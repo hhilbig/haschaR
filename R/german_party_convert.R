@@ -14,7 +14,7 @@ german_party_convert <- function(
 
   if (linebreak_far_right) {
 
-    far_right_label <- "Far-right parties\n(incl. AfD)""
+    far_right_label <- "Far-right parties\n(incl. AfD)"
 
   }
       

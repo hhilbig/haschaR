@@ -6,11 +6,16 @@
 \usage{
 german_party_convert(
   party_vec,
-  far_right_label = "Far-right parties (incl. AfD)"
+  far_right_label = "Far-right parties (incl. AfD)",
+  linebreak_far_right = T
 )
 }
 \arguments{
 \item{party_vec}{vector of party names}
+
+\item{far_right_label}{label for far-right parties}
+
+\item{linebreak_far_right}{add linebreak for far right label}
 }
 \description{
 Convert german party names (de or en) to proper German party names
