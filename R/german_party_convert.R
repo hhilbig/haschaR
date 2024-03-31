@@ -1,13 +1,22 @@
 #' Convert german party names (de or en) to proper German party names
 #'
 #' @param party_vec vector of party names
+#' @param far_right_label label for far-right parties
+#' @param linebreak_far_right add linebreak for far right label
 #' @import tidyverse stringr
 #' @export
 #'
 
 german_party_convert <- function(
     party_vec,
-    far_right_label = "Far-right parties (incl. AfD)") {
+    far_right_label = "Far-right parties (incl. AfD)", 
+    linebreak_far_right = T) {
+
+  if (linebreak_far_right) {
+
+    far_right_label <- "Far-right parties\n(incl. AfD)""
+
+  }
       
   ## Party origins and destinations
 
