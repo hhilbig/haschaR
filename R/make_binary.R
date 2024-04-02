@@ -14,7 +14,7 @@ make_binary <- function(v,
                         q = 0.75) {
   
   if (!(method %in% c('mean', 'median', 'quantile'))) {
-    break("Unknown method")
+    stop("Unknown method")
   }
   
   if (!method == 'quantile') {
