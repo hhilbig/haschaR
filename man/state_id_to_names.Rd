@@ -4,10 +4,12 @@
 \alias{state_id_to_names}
 \title{Conversion between German state IDs (AGS) and English names}
 \usage{
-state_id_to_names(state_id)
+state_id_to_names(state_id, how = "full_name")
 }
 \arguments{
 \item{state_id}{state id vector}
+
+\item{how}{character, either "full_name" or "short_name"}
 }
 \description{
 Conversion between German state IDs (AGS) and English names
