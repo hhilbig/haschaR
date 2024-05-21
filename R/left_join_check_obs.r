@@ -7,6 +7,24 @@
 #' @export
 
 left_join_check_obs <- function(x, y, ...) {
+
+  ## Find common variables
+
+  comvars <- colnames(x) %in% colnames(y)
+  comvars <- colnames(x)[comvars]
+
+  ## Message 
+
+  if (length(comvars) == 0) {
+    message("No common variables found")
+  } else if (length(comvars) == 1) {
+    message("Common variable: ", comvars)
+  } else {
+    message("Common variables:", paste(comvars, collapse = ", "))
+  }
+
+  ## Check 
+  
   nobs1 = nrow(x)
 
   out <- dplyr::left_join(x = x, y = y, ...)
