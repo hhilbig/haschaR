@@ -9,15 +9,12 @@
 
 german_party_convert <- function(
     party_vec,
-    far_right_label = "Far-right parties (incl. AfD)", 
+    far_right_label = "Far-right parties (incl. AfD)",
     linebreak_far_right = T) {
-
   if (linebreak_far_right) {
-
     far_right_label <- "Far-right parties\n(incl. AfD)"
-
   }
-      
+
   ## Party origins and destinations
 
   party_orig <- list(
@@ -30,9 +27,10 @@ german_party_convert <- function(
     c("greens", "Gruene", "green", "gruen"),
     c("fdp", "f.d.p."),
     c("AFD", "afd", "a.f.d.", "alternative"),
-    c("far right", "far-right", "far_right")
+    c("far right", "far-right", "far_right"),
+    c("turnout")
   )
-  party_destination <- c("SPD", "CDU/CSU", "Left", "Greens", "FDP", "AfD", far_right_label)
+  party_destination <- c("SPD", "CDU/CSU", "Left", "Greens", "FDP", "AfD", far_right_label, "Turnout")
 
   ## Loop
 
