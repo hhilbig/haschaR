@@ -7,36 +7,34 @@
 #' @export
 
 left_join_check_obs <- function(x, y, ...) {
-
   ## Find common variables
 
   comvars <- colnames(x) %in% colnames(y)
   comvars <- colnames(x)[comvars]
 
-  ## Message 
+  ## Message
 
   if (length(comvars) == 0) {
-    message("No common variables found")
+    cat("No common variables found\n")
   } else if (length(comvars) == 1) {
-    message("Common variable: ", comvars)
+    cat("Common variable: ", comvars, "\n")
   } else {
-    message("Common variables:", paste(comvars, collapse = ", "))
+    cat("Common variables:", paste(comvars, collapse = ", "), "\n")
   }
 
-  ## Check 
-  
-  nobs1 = nrow(x)
+  ## Check
+
+  nobs1 <- nrow(x)
 
   out <- dplyr::left_join(x = x, y = y, ...)
 
-  nobs2 = nrow(out)
+  nobs2 <- nrow(out)
 
   if (nobs1 != nobs2) {
     warning("Number of observations increased from ", nobs1, " to ", nobs2, " after left join")
   } else {
-    message("Number of observations remained the same after left join")
+    cat("Number of observations remained the same after left join\n")
   }
 
-    return(out)
-  
+  return(out)
 }
