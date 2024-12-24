@@ -9,20 +9,33 @@ find_variables(data, pattern = "", n = 10)
 \arguments{
 \item{data}{A data frame or tibble to search through}
 
-\item{pattern}{Character string. Pattern to match variable names against (default: "")}
+\item{pattern}{Character string. Pattern to match variable names against. Empty pattern
+returns the first n variables (default: "")}
 
 \item{n}{Integer. Maximum number of variables to return (default: 10)}
 }
 \value{
-Invisibly returns a tibble with variable summaries. Prints a formatted table to console.
+Invisibly returns a tibble with variable summaries and prints a formatted
+  table to console. The table includes: Variable name, Type, Missing percentage,
+  Unique value count, and numeric summaries (Min, Max, Mean) where applicable.
 }
 \description{
-Searches for variables in a data frame based on a pattern and provides summary statistics
-for the matching variables.
+Searches for variables in a data frame based on a pattern and provides summary statistics.
+If a pattern is provided, matches variables using exact matching first, then uses
+Jaro-Winkler distance for fuzzy matching. Returns summary statistics including
+variable type, missing value percentage, number of unique values, and numeric
+summaries (min, max, mean) where applicable.
 }
 \details{
-When pattern is empty, returns the first n variables. When pattern is provided,
-uses Jaro-Winkler distance to find closest matching variable names.
+The function performs the following:
+1. For empty patterns, selects the first n variables
+2. For provided patterns:
+   - First finds exact matches (case-insensitive)
+   - If needed, adds fuzzy matches using Jaro-Winkler distance
+3. Generates summary statistics with proper formatting:
+   - Missing values shown as percentages
+   - Numeric summaries rounded to 2 decimal places
+   - NA for non-applicable metrics (e.g., mean for character columns)
 }
 \examples{
 \dontrun{
